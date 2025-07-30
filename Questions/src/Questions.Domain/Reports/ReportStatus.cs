@@ -1,6 +1,6 @@
 ﻿namespace Questions.Domain.Reports;
 
-public enum Status
+public enum ReportStatus
 {
     /// <summary>
     /// Жалоба открыта
