@@ -1,7 +1,8 @@
+using Questions.Web;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddProgram();
 
 WebApplication app = builder.Build();
 

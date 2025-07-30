@@ -74,6 +74,7 @@ dotnet_diagnostic.SA1600.severity = none
 csharp_style_allow_embedded_statements_on_same_line_experimental = true:silent
 dotnet_diagnostic.SA1206.severity = none
 dotnet_diagnostic.SA1010.severity = none
+dotnet_diagnostic.SA1101.severity = none
 
 [*.{cs,vb}]
 dotnet_style_prefer_simplified_boolean_expressions = true:suggestion
@@ -400,3 +401,5 @@ end_of_line = crlf
 dotnet_style_coalesce_expression = true:none
 dotnet_style_null_propagation = true:error
 dotnet_style_prefer_is_null_check_over_reference_equality_method = true:error
+dotnet_style_prefer_auto_properties = true:warning
+dotnet_style_object_initializer = true:error
