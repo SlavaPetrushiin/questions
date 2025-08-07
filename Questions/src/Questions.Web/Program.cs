@@ -2,7 +2,8 @@ using Questions.Web;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddProgram();
+builder.Services.AddProgram(builder.Configuration);
+
 
 WebApplication app = builder.Build();
 

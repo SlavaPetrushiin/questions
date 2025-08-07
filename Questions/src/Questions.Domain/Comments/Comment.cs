@@ -13,4 +13,8 @@ public class Comment
     public required Guid EntityId { get; set; }
 
     public required string Text { get; set; }
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    public DateTime? UpdatedAt { get; set; }
 }

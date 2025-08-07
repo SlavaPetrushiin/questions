@@ -2,6 +2,7 @@
 
 public class Question
 {
+    protected Question() { }
     public Question(
         Guid id,
         string title,
@@ -11,8 +12,8 @@ public class Question
     )
     {
         Id = id;
-        Title = title;
-        Text = text;
+        Title = title ?? throw new ArgumentNullException(nameof(title));
+        Text = text ?? throw new ArgumentNullException(nameof(text));
         UserId = userId;
         Tags = tags.ToList();
         Status = QuestionStatus.Open;
@@ -28,6 +29,7 @@ public class Question
 
     public List<Answer> Answers { get; set; } = [];
 
+    public Guid? SolutionId { get; set; }
     public Answer? Solution { get; set; }
 
     public List<Guid> Tags { get; set; } = [];
