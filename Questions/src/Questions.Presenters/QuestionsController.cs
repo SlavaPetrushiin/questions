@@ -1,10 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
+using Questions.Application.Questions;
 
 namespace Questions.Presenters.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class QuestionsController : ControllerBase
 {
+    private readonly IQuestionsService _questionsService;
+    public QuestionsController(IQuestionsService questionsService)
+    {
+        _questionsService = questionsService;
+    }
+
     [HttpGet]
     public async Task<IActionResult> Get([FromQuery] GetQuestionDto questionDto, CancellationToken cancellationToken)
     {
@@ -20,7 +27,7 @@ public class QuestionsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateQuestionDto questionDto, CancellationToken cancellationToken)
     {
-        return Ok("Created Question");
+        return Ok(await _questionsService.Create(questionDto, cancellationToken));
     }
 
     [HttpPut("{question_id:guid}")]

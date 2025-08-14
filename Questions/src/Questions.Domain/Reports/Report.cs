@@ -8,13 +8,13 @@ public class Report
 
     public required Guid ReportedUserId { get; set; }
 
-    public Guid ResolvedByUserId { get; set; }
+    public Guid? ResolvedByUserId { get; set; }
 
     public required string Reason { get; set; }
 
     public ReportStatus Status { get; set; } = ReportStatus.Open;
 
-    public DateTime CratedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public DateTime? UpdatedAt { get; set; }
 }
