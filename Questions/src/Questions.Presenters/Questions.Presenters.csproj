@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Questions.Application\Questions.Application.csproj" />
     <ProjectReference Include="..\Questions.Contracts\Questions.Contracts.csproj" />
     <ProjectReference Include="..\Questions.Domain\Questions.Domain.csproj" />
   </ItemGroup>
